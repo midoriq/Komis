@@ -1,0 +1,24 @@
+komis samochodowy
+- baza danych z co najmniej 100 produktami
+- sortowanie i wyswietlanie wedlug podanych kryteriow: wybieranie marki, modelu, cena (od ... do), rok produkcji, 
+	przebieg samochodu, (moze byc moc silnika), jakie paliwo, skrzynia (manual, automat), kraj pochodzenia, kolor, stan techniczny (uszkodzony, nieuszkodzony),
+	wypadkowy czy bezwypadkowy, kraj pochodzenia
+- MOZNA DAC MOZLIWOSC DODAWANIA ZDJEC (trzeba to jakos ogarnac)
+- mozliwosc dodawania elementow, np nowego koloru (kazdy taki element w postaci klucza obcego (typu kolory to osobna tabela)
+- dodawanie nowych samochodow
+- nie mozna wybrac modelu bez marki
+- wyswietlanie polskich znakow
+- dostep do oferty jest tylko dla zalogowanych uzytkownikow, kazdy moze wejsc na strone glowna, dodac sesje na 10 minut bezczynnosci, ciasteczka dodac
+
+POMYSLY ??
+- dodac super uzytkownikow ktorzy moga dodac nowe elementy
+- zakladka about us ktora pokazuje gdzie znajduje sie komis itp, mozna dodac zapytanie
+- dla beki zmiana koloru na tryb nocny i dzienny
+- 
+
+
+ROZKLAD PRACY:
+- logo i nazwa strony
+- stworzenie wygladu w figmie jak chcemy to zeby wygladalo (raczej dzisiaj po szkole) 	----  RAZEM
+- baza danych z wszystkimi waznymi rzeczami (potem doda sie 100 produktow)		----  moge ja
+- stworzenie wygladu podstawowego strony						----  ZUZIA
