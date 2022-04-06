@@ -22,3 +22,7 @@ ROZKLAD PRACY:
 - stworzenie wygladu w figmie jak chcemy to zeby wygladalo (raczej dzisiaj po szkole) 	----  RAZEM
 - baza danych z wszystkimi waznymi rzeczami (potem doda sie 100 produktow)		----  moge ja
 - stworzenie wygladu podstawowego strony						----  ZUZIA
+
+(OLA's notes):
+- dodac obrazy do bazy do samochodu
+- dodac mozliwosc dodawania obrazu do typu nadwozia
