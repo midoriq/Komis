@@ -8,13 +8,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['signup'])){
     $password = $_POST['password'];
     $password2 = $_POST['password2'];
 
-    // walidacja
-
     $sql = "SELECT * FROM `uzytkownicy` WHERE `email` = '".$email."';";
     $qry = mysqli_query($conn, $sql);
 
     if(mysqli_num_rows($qry) == 0){ // czy email istnieje w bazie danych
-
+        if($password == $password2){ // hasla sa rowne
+            $qry = mysqli_query($conn, "INSERT INTO `uzytkownicy` (`imie`, `email`, `haslo`) VALUES ('".$imie."', '".$email."', '".$password."');");
+            // ----- TUTAJ PROSTA WALIDACJA HASLA I EMAILA -----
+        }
+        else{
+            echo "Hasla nie sa rowne";
+        }
     }
     else{
         echo "Email jest juz zajety!";
