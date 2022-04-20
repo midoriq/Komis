@@ -3,7 +3,7 @@
 $conn = mysqli_connect("localhost", "root", "", "komis_samochodowy");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['signup'])){
-    $imie = ucfirst( $_POST['imie']);
+    $imie = ucfirst( $_POST['imie']); // zamiana znakow zeby zaczynaly sie z wielkiej litery
     $email = $_POST['email'];
     $password = $_POST['password'];
     $password2 = $_POST['password2'];
