@@ -7,14 +7,14 @@
 </head>
 <body>
     <?php
-        $conn = mysqli_connect("localhost", "root", "", "komis_samochodowy");
+        $conn = mysqli_connect("localhost", "root", "", "komis2");
     ?>
     <!--    marka, model, cena, rok produkcji, przebieg, moc silnika,
             paliwo, skrzynia biegow, kraj pochodzenia, kolor, stan techniczny,
             wypadkowy, kategoria, nadwozie
     -->
     <h2>Dodaj nowy samochod do bazy danych</h2>
-    <form action="dodaj_s.php" method="post">
+    <form action="dodaj_s.php" method="post" enctype="multipart/form-data">
         <select name="marka" id = "marka" onchange = "zmien(this)">
             <option value="0" >-- Wybierz marke --</option>
             <?php
@@ -106,7 +106,7 @@
                 $sql = "SELECT `id`, `kategoria` FROM `kategoria`;";
                 $query = mysqli_query($conn, $sql);
                 while($row = mysqli_fetch_row($query)){
-                    echo "<option name = '".$row[0]."'>".$row[1]."</option>";
+                    echo "<option value = '".$row[0]."'>".$row[1]."</option>";
                 }
             ?>
         </select> <br>
@@ -117,10 +117,13 @@
                 $sql = "SELECT `id`, `nadwozie` FROM `nadwozie`;";
                 $query = mysqli_query($conn, $sql);
                 while($row = mysqli_fetch_row($query)){
-                    echo "<option name = '".$row[0]."'>".$row[1]."</option>";
+                    echo "<option value = '".$row[0]."'>".$row[1]."</option>";
                 }
             ?>
         </select> <br>
+
+        <label>Select Image File:</label>
+        <input type="file" name="image"><br>
 
         <input type="submit" value="Dodaj">
     </form>
