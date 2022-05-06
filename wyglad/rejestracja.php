@@ -1,12 +1,16 @@
 <!--        --------------  REJESTRACJA  --------------        -->
 <?php
-$conn = mysqli_connect("localhost", "root", "", "komis_samochodowy");
+$conn = mysqli_connect("localhost", "root", "", "komis2");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['signup'])){
     $imie = ucfirst( $_POST['imie']); // zamiana znakow zeby zaczynaly sie z wielkiej litery
     $email = $_POST['email'];
     $password = $_POST['password'];
     $password2 = $_POST['password2'];
+
+    if(empty($imie) || empty($email) || empty($password) || empty($password2)){
+        die('Wypełnij wszystkie pola!');
+    }
 
     $sql = "SELECT * FROM `uzytkownicy` WHERE `email` = '".$email."';";
     $qry = mysqli_query($conn, $sql);
@@ -17,14 +21,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['signup'])){
             // ----- TUTAJ PROSTA WALIDACJA HASLA I EMAILA -----
         
             //------ ZMIEŃ LOKALIZACJE DO STRONY LOGOWANIA -----    
-            header("Location: log_in.php");
+            header('Location: log_in.php');
         }
         else{
-            echo "Hasla nie sa rowne";
+            die('Hasla nie sa rowne');
         }
     }
     else{
-        echo "Email jest juz zajety!";
+        die('Email jest juz zajety!');
     }
 }
 

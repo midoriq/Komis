@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "komis_samochodowy");
+$conn = mysqli_connect("localhost", "root", "", "komis2");
 
 session_start();
 
@@ -14,11 +14,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['signin'])){ //sprawdzen
     }
     else{
         $sql = "SELECT * FROM `uzytkownicy` WHERE `haslo` = '".$password."' AND `email` = '".$email."';";
-        if(mysqli_num_rows(mysqli_query($conn, $sql)) == 0){ //czy haslo zgadza sie z emailem
+        $query = mysqli_query($conn, $sql);
+        if(mysqli_num_rows($query) == 0){ //czy haslo zgadza sie z emailem
             echo "Nieprawidlowe haslo!";
         }
         else{   //poprawne zalogowanie
-            $_SESSION['User'] = $email;
+            while($row = mysqli_fetch_row($query)){
+                $_SESSION['User'] = $row[1]; //przypisz imie do User w sesji
+                $_SESSION['Email'] = $email;
+                $_SESSION['Admin'] = $row[4]; //sprawdz czy uzytkownik jest administratorem
+            }
             header("Location: oferta.php");
         }
     }
