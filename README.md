@@ -1,5 +1,4 @@
 # Car lot project
-Jest to projekt szkolny nad którym pracowałam w zespole dwuosobowym. Moją częścią był głównie backend napisany w PHP, stworzenie bazy danych oraz pomoc przy frontendzie. 
 This is school project on which I work in group of two. My part was mainly back-end written in PHP, creating and connecting with database, and help with front-end.
 
 ## Project description
